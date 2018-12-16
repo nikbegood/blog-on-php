@@ -13,9 +13,9 @@
 				<div class="inner">
 					<a href="index.html" class="logo">introspect</a>
 					<nav id="nav">
-						<a href="index.php">Home</a>
-						<a href="generic.html">Generic</a>
-						<a href="elements.html">Elements</a>
+						<a href="#">Home</a>
+						<a href="#">Generic</a>
+						<a href="#">Elements</a>
 					</nav>
 				</div>
 			</header>
@@ -33,49 +33,25 @@
 			</section>
 
 		<!-- One -->
+		<?php foreach ($newsList as $newsItem):?>
+		<?php foreach ($latestNews as $newsItem):?>
 			<section id="one">
 				<div class="inner">
 					<header>
-						<h2>Magna Etiam Lorem</h2>
+						<h2><?php echo $newsItem['title'].' # '.$newsItem['id'];?></h2>
 					</header>
-					<p>Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper vehicula. Integer adipiscin sem. Nullam quis massa sit amet nibh viverra malesuada. Nunc sem lacus, accumsan quis, faucibus non, congue vel, arcu, erisque hendrerit tellus. Integer sagittis. Vivamus a mauris eget arcu gravida tristique. Nunc iaculis mi in ante.</p>
+					<div class="image fit">
+						<img src="template/images/pic01.jpg" alt="" />
+					</div>
+					<p><?php echo $newsItem['short_content'];?></p>
 					<ul class="actions">
-						<li><a href="#" class="button alt">Learn More</a></li>
+						<li><a href='/news/<?php echo $newsItem['id'] ;?>' class="button alt">Read More</a></li>
 					</ul>
 				</div>
 			</section>
+		<?php endforeach;?>
 
-		<!-- Two -->
-			<section id="two">
-				<?php foreach ($newsList as $newsItem):?>
-				<div class="inner">
-					<article>
-						<div class="content">
-							<header>
-								<h3>a href='/news/<?php echo $newsItem['id'] ;?>'><?php echo $newsItem['title'].' # '.$newsItem['id'];?></a></h3>
-							</header>
-							<div class="image fit">
-								<img src="template/images/pic01.jpg" alt="" />
-							</div>
-							<p><?php echo $newsItem['short_content'];?></p>
-						</div>
-					</article>
-
-					<article class="alt">
-						<div class="content">
-							<header>
-								<h3>a href='/news/<?php echo $newsItem['id'] ;?>'><?php echo $newsItem['title'].' # '.$newsItem['id'];?></h3>
-							</header>
-							<div class="image fit">
-								<img src="template/images/pic02.jpg" alt="" />
-							</div>
-							<p><?php echo $newsItem['short_content'];?></p>
-						</div>
-					</article>
-				</div>
-			</section>
-
-			<?php endforeach;?>
+		
 
 		<!-- Three -->
 			<section id="three">

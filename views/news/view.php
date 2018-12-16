@@ -4,7 +4,7 @@
 		<title>Blog</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="template/css/main.css" />
+		<link rel="stylesheet" href="/template/css/main.css" />
 	</head>
 	<body>
 
@@ -13,9 +13,9 @@
 				<div class="inner">
 					<a href="index.html" class="logo">introspect</a>
 					<nav id="nav">
-						<a href="index.php">Home</a>
-						<a href="generic.html">Generic</a>
-						<a href="elements.html">Elements</a>
+						<a href="#">Home</a>
+						<a href="#">Generic</a>
+						<a href="#">Elements</a>
 					</nav>
 				</div>
 			</header>
@@ -32,75 +32,58 @@
 				</div>
 			</section>
 	<!-- end #header -->
-	<div id="page">
-		<div id="page-bgtop">
-			<div id="page-bgbtm">
-				<div id="content">
-					<div class="post">
-						<h2 class="title"><a href='/news/<?php echo $newsItem['id'] ;?>'><?php echo 
-						$newsItem['title'].' # '.$newsItem['id'];?></a></h2>
-						<p class="meta">Posted by <a href="#"><?php echo $newsItem['author_name'];?></a> on <?php echo $newsItem['date'];?>
-							&nbsp;&bull;&nbsp; <a href='/news/' class="permalink"> Back to HomePage</a></p>
-						<div class="entry">
-							<p><img src="/template/images/pic01.jpg" width="800" height="300" alt="" /></p>
+
+	<!-- MAIN -->
+
+			<section id="one">
+						<div class="inner">
+							<header>
+								<h2><?php echo $newsItem['title'].' # '.$newsItem['id'];?></h2>
+							</header>
+							<div class="image fit">
+								<img src="template/images/pic01.jpg" alt="" />
+							</div>
 							<p><?php echo $newsItem['short_content'];?></p>
+							<ul class="actions">
+								<li><a href='/news/<?php echo $newsItem['id'] ;?>' class="button alt">Read More</a></li>
+							</ul>
 						</div>
+			</section>
+		
+
+			<section id="footer">
+				<div class="inner">
+					<header>
+						<h2>Get in Touch</h2>
+					</header>
+					<form method="post" action="#">
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="name" />
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input type="text" name="email" id="email" />
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" value="Send Message" class="alt" /></li>
+						</ul>
+					</form>
+					<div class="copyright">
+						&copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>. Images <a href="https://unsplash.com/">Unsplash</a>
 					</div>
-					<p><a href='/news/' class="permalink"> Back to HomePage</a></p>
-					<div style="clear: both;">&nbsp;</div>
 				</div>
-				<!-- end #content -->
-				<div id="sidebar">
-					<ul>
-						<li>
-							<h2>Aliquam tempus</h2>
-							<p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper consectetuer hendrerit.</p>
-						</li>
-						<li>
-							<h2>Categories</h2>
-							<ul>
-								<li><a href="#">Aliquam libero</a></li>
-								<li><a href="#">Consectetuer adipiscing elit</a></li>
-								<li><a href="#">Metus aliquam pellentesque</a></li>
-								<li><a href="#">Suspendisse iaculis mauris</a></li>
-								<li><a href="#">Urnanet non molestie semper</a></li>
-								<li><a href="#">Proin gravida orci porttitor</a></li>
-							</ul>
-						</li>
-						<li>
-							<h2>Blogroll</h2>
-							<ul>
-								<li><a href="#">Aliquam libero</a></li>
-								<li><a href="#">Consectetuer adipiscing elit</a></li>
-								<li><a href="#">Metus aliquam pellentesque</a></li>
-								<li><a href="#">Suspendisse iaculis mauris</a></li>
-								<li><a href="#">Urnanet non molestie semper</a></li>
-								<li><a href="#">Proin gravida orci porttitor</a></li>
-							</ul>
-						</li>
-						<li>
-							<h2>Archives</h2>
-							<ul>
-								<li><a href="#">Aliquam libero</a></li>
-								<li><a href="#">Consectetuer adipiscing elit</a></li>
-								<li><a href="#">Metus aliquam pellentesque</a></li>
-								<li><a href="#">Suspendisse iaculis mauris</a></li>
-								<li><a href="#">Urnanet non molestie semper</a></li>
-								<li><a href="#">Proin gravida orci porttitor</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<!-- end #sidebar -->
-				<div style="clear: both;">&nbsp;</div>
-			</div>
-		</div>
-	</div>
-	<!-- end #page -->
-</div>
-<div id="footer">
-	<p>Copyright (c) 2013 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org">FCT</a>. Photos by Fotogrph</a>.</p>
-</div>
-<!-- end #footer -->
-</body>
+			</section>
+
+		<!-- Scripts -->
+			<script src="template/js/jquery.min.js"></script>
+			<script src="template/js/skel.min.js"></script>
+			<script src="template/js/util.js"></script>
+			<script src="template/js/main.js"></script>
+
+	</body>
 </html>
